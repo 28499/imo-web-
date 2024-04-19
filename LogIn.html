@@ -1,0 +1,350 @@
+<html>
+  <head>
+    <link rel="shortcut icon" href="./images/logo2.png" type="image/x-icon">
+    <title>Imo web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background: #151515;
+        overflow: hidden;
+      }
+
+      .container {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .image1 {
+        width: 100%;
+        height: 100vh;
+        background: url("./images/background.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .image2 {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+      }
+      .text {
+        position: absolute;
+        left: 50px;
+        top: 200px;
+        font-size: 20px;
+        color: aliceblue;
+      }
+
+      .login-form {
+        scale: 1.1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100px;
+        width: 370px;
+        height: auto;
+        background: #dddddd;
+        padding: 40px 35px 60px;
+        box-sizing: border-box;
+        border: 1px solid #cecece;
+        border-radius: 5px;
+        box-shadow: inset 0 0 1px #eceaea;
+      }
+      .login-text {
+        font-size: 30px;
+        color: #262626;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+      form {
+        margin-top: 40px;
+      }
+      form .field {
+        margin-top: 20px;
+        display: flex;
+      }
+      .field .fas {
+        height: 50px;
+        outline: none;
+        width: 60px;
+        color: #868686;
+        font-size: 20px;
+        line-height: 50px;
+        border: 1px solid #444;
+        border-right: none;
+        border-radius: 5px 0 0 5px;
+        background: linear-gradient(#c6c6c6, #d6d6d6);
+    }
+    .field input,
+    form button {
+        height: 50px;
+        width: 100%;
+        outline: none;
+        font-size: 19px;
+        color: #868686;
+        padding: 0 15px;
+        border-radius: 0 5px 5px 0;
+        border: 1px solid #444;
+        caret-color: #339933;
+    }
+    form input {
+          background: linear-gradient(#c6c6c6, #d6d6d6);
+          margin-top: 1px;
+
+      }
+    form button {
+          background: linear-gradient(#222, #333);
+
+      }
+      input:focus {
+        color: #339933;
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.2),
+          inset 0 0 5px rgba(0, 255, 0, 0.1);
+        background: linear-gradient(#f7f7f7, #ffffff);
+        animation: glow 0.8s ease-out infinite alternate;
+      }
+      @keyframes glow {
+        0% {
+          border-color: #339933;
+          box-shadow: 0 0 5px rgba(0, 255, 0, 0.2),
+            inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        100% {
+          border-color: #6f6;
+          box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+            inset 0 0 10px rgba(0, 255, 0, 0.4);
+        }
+      }
+      button {
+        margin-top: 30px;
+        border-radius: 5px !important;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+      button:hover {
+        color: #339933;
+        border: 1px solid #339933;
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
+          0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
+      }
+      .link {
+        margin-top: 25px;
+        color: #868686;
+      }
+      .link a {
+        color: #339933;
+        text-decoration: none;
+      }
+      .link a:hover {
+        text-decoration: underline;
+      }
+
+      /* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container1 {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: fit-content; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 10%;
+  }
+}
+    </style>
+    <body>
+      <div class="container">
+        <img class="image1" alt="" />
+        <img
+          class="image2"
+          src="images/logo.png"
+          alt=""
+          width="100"
+          height="100"
+        />
+        <div class="text">Free video calls and chat around the globe</div>
+        <!--
+        <div class="container2">
+          <form class="form" action="/action_page.php">
+            <h1 class="login">Login</h1>
+
+            <label for="Phone"><b>Phone Number</b></label>
+            <input id="phone" type="tel" name="phone" />
+            
+            <label for="code"><b>Code</b></label>
+            <input type="code" placeholder="Enter Code" name="code" required />
+            
+            <button type="submit" class="btn">Login</button>
+        </form>
+      </div>
+      -->
+        <div class="login-form">
+            <div class="login-text">LOGIN</div>
+            <form action="/Signup.html">
+                <div class="field">
+                    <input placeholder="Phone Number" id="phone" type="tel" name="phoneNumber" />
+                </div>
+                <button type="code" class="getcode">Get Code</button><br />
+            <div class="field">
+              <div class="fas fa-sms"></div>
+              <input type="code" placeholder="Enter Code" />
+            </div>
+            <button>LOGIN</button>
+            
+              Create New Account: <br>
+          
+                </form>
+                <a href="Signup.html">
+                  <button>Sign Up</button>
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+          utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        }
+    );
+
+        // Install the Twilio Node.js library using npm: npm install twilio
+        const twilio = require("twilio");
+
+        // Create a new instance of the Twilio client with your account SID and auth token
+        const client = new twilio("YOUR_ACCOUNT_SID", "YOUR_AUTH_TOKEN");
+
+        // Define a function to send the code via SMS
+        function sendCodeToPhoneNumber(phoneNumber, code) {
+          // Use the Twilio client to send an SMS message
+          client.messages
+            .create({
+              body: `Your code is: ${code}`,
+              from: "YOUR_TWILIO_PHONE_NUMBER",
+              to: phoneNumber,
+            })
+            .then((message) =>
+              console.log(`Code sent to ${phoneNumber}: ${message.sid}`)
+            )
+            .catch((error) =>
+              console.error(`Error sending code to ${phoneNumber}: ${error}`)
+            );
+        }
+
+        // Express.js route handler for form submission
+        app.post("/send-code", (req, res) => {
+          // const phoneNumber = req.body.phoneNumber;
+          const code = generateCode(); // Replace this with your code generation logic
+
+          // Call the function to send the code via SMS
+          sendCodeToPhoneNumber(phoneInput, code);
+
+          // Respond with a success message or redirect to a success page
+          res.send("Code sent successfully!");
+        });
+      </script>
+    </body>
+  </head>
+</html>
+
